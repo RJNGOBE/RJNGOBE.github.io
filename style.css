@@ -150,14 +150,17 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
 }
 
-.section-container {
-  display: flex;
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* PROFILE SECTION */
@@ -287,12 +290,6 @@ section {
   border-radius: 2rem;
 }
 
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
-
 .details-container {
   padding: 1.5rem;
   flex: 1;
@@ -314,7 +311,7 @@ section {
   margin: auto 0;
 }
 
- /* EXPERIENCE SECTION */
+/* EXPERIENCE SECTION */
 
 .experience-details-container {
   display: flex;
@@ -357,14 +354,15 @@ article div {
   align-items: flex-start; /* Align text to the start */
 }
 
-article h3, article p {
+article h3,
+article p {
   margin: 0;
   line-height: 1.5; /* For better alignment */
 }
 
-/* COMPANIES SECTION */
+/* CLIENTS SECTION */
 
-#companies {
+#clients {
   position: relative;
 }
 
@@ -374,18 +372,18 @@ article h3, article p {
   justify-content: center;
   padding: 1rem;
   margin: 1rem 0;
-  border: none; /* Remove border */
-  background: none; /* Remove background */
-  box-shadow: none; /* Remove box shadow */
+  background: none; /* Ensure background is visible */
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease-in-out;
+  border: none; /* Remove border */
 }
 
 .company-logo {
   width: 150px; /* Adjust the size as needed */
   height: auto;
   display: block;
+  border: none; /* Ensure no borders on images */
 }
 
 /* Scroll Animation */

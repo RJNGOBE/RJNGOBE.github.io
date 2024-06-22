@@ -6,16 +6,29 @@ function toggleMenu() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
   const colorContainers = document.querySelectorAll(".color-container");
 
   function checkVisibility() {
     const triggerBottom = window.innerHeight * 0.9;
 
-    colorContainers.forEach((container) => {
+    sections.forEach((section) => {
+      const boxTop = section.getBoundingClientRect().top;
+
+      if (boxTop < triggerBottom) {
+        section.classList.add("visible");
+      } else {
+        section.classList.remove("visible");
+      }
+    });
+
+    colorContainers.forEach((container, index) => {
       const boxTop = container.getBoundingClientRect().top;
 
       if (boxTop < triggerBottom) {
-        container.classList.add("visible");
+        setTimeout(() => {
+          container.classList.add("visible");
+        }, index * 100); // Staggered animation
       } else {
         container.classList.remove("visible");
       }
@@ -25,4 +38,3 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", checkVisibility);
   checkVisibility();
 });
-
