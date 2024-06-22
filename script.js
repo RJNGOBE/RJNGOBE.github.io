@@ -1,13 +1,17 @@
 function toggleMenu() {
   const menu = document.querySelector(".menu-links");
   const icon = document.querySelector(".hamburger-icon");
+  const content = document.querySelector(".content"); // Select the content to apply blur effect
+
   menu.classList.toggle("open");
   icon.classList.toggle("open");
+  content.classList.toggle("blur-content");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");
   const colorContainers = document.querySelectorAll(".color-container");
+  const menuLinks = document.querySelectorAll(".menu-links a");
 
   function checkVisibility() {
     const triggerBottom = window.innerHeight * 0.9;
@@ -34,6 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      const menu = document.querySelector(".menu-links");
+      const icon = document.querySelector(".hamburger-icon");
+      const content = document.querySelector(".content");
+
+      menu.classList.remove("open");
+      icon.classList.remove("open");
+      content.classList.remove("blur-content");
+    });
+  });
 
   window.addEventListener("scroll", checkVisibility);
   checkVisibility();
