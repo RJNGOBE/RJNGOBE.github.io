@@ -75,6 +75,7 @@ a:hover {
 .hamburger-menu {
   position: relative;
   display: inline-block;
+  z-index: 2; /* Ensure hamburger menu is above other content */
 }
 
 .hamburger-icon {
@@ -84,6 +85,7 @@ a:hover {
   height: 24px;
   width: 30px;
   cursor: pointer;
+  padding: 1rem; /* Add padding for better spacing */
 }
 
 .hamburger-icon span {
@@ -102,6 +104,7 @@ a:hover {
   max-height: 0;
   overflow: hidden;
   transition: all 0.3 ease-in-out;
+  z-index: 1; /* Ensure menu links are above other content */
 }
 
 .menu-links a {
@@ -170,6 +173,8 @@ section.visible {
   justify-content: center;
   gap: 5rem;
   height: 80vh;
+  position: relative;
+  z-index: 0; /* Ensure profile section is below the hamburger menu */
 }
 
 .section__pic-container {
@@ -453,4 +458,37 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* MEDIA QUERIES FOR MOBILE */
+
+@media screen and (max-width: 768px) {
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Add padding for better spacing */
+    z-index: 3; /* Ensure hamburger menu is above other content */
+  }
+
+  section {
+    margin: 0 2rem; /* Adjust section margins for mobile */
+  }
+
+  .details-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .article-container {
+    justify-content: center;
+  }
+
+  .article-container article {
+    width: 100%;
+  }
 }
