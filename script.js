@@ -5,7 +5,13 @@ function toggleMenu() {
 
   menu.classList.toggle("open");
   icon.classList.toggle("open");
-  content.classList.toggle("blur-content");
+  if (content.classList.contains("blurred")) {
+    content.classList.remove("blurred");
+  } else {
+    setTimeout(() => {
+      content.classList.add("blurred");
+    }, 300);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -47,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       menu.classList.remove("open");
       icon.classList.remove("open");
-      content.classList.remove("blur-content");
+      content.classList.remove("blurred");
     });
   });
 
