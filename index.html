@@ -17,6 +17,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#clients">Clients</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#blog">Blog</a></li>
       </ul>
     </div>
   </nav>
@@ -33,6 +34,7 @@
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
         <li><a href="#clients" onclick="toggleMenu()">Clients</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
       </div>
     </div>
   </nav>
@@ -103,9 +105,10 @@
           </div>
           <div class="text-container">
             <p>
-              Hey there! I'm Risima Ngobe, a BI Consultant with a degree in Mathematical Sciences from Stellenbosch University. By day, I turn data into insights; by night, I am a tech enthusiast who loves building websites and exploring the latest tech trends.
-              I am passionate about continuous improvement and fostering positive work environments. When I'm not working, I enjoy exploring new places and diving into exciting projects.
-              Let's connect and create something awesome together!
+              I am a multifaceted professional with expertise in Business Intelligence, Data Analysis, and Data Engineering. 
+              My diverse skill set allows me to bridge the gap between data and decision-making, ensuring that organizations can leverage their data effectively to drive business growth and innovation. 
+              With a solid foundation in data analysis and engineering, I excel in turning raw data into valuable insights that support strategic business decisions. 
+              My ability to manage end-to-end data processes ensures that data is not only accurate and reliable but also actionable and impactful.
             </p>
           </div>
         </div>
@@ -364,6 +367,35 @@
         </div>
       </div>
     </section>
+    
+    <!-- Blog Section -->
+    <section id="blog">
+      <p class="section__text__p1">Read My</p>
+      <h1 class="title">Blog</h1>
+      <div class="blog-container">
+        <!-- Blog posts will be dynamically loaded here -->
+      </div>
+      <button class="btn" id="view-more-btn">View More</button>
+    </section>
+    
+      <!-- Blog Post Content Section -->
+      <section id="blog-post-content" style="display: none;">
+        <div class="post-content-container">
+          <a href="#" class="back-to-blog">Back to Blog</a>
+          <h2 id="post-title"></h2>
+          <div id="post-content"></div>
+        </div>
+      </section>
+
+    <!-- Full Blog List Section -->
+    <section id="full-blog-list" style="display: none;">
+      <p class="section__text__p1">All Blog Posts</p>
+      <h1 class="title">Blog Archive</h1>
+      <div class="blog-container">
+        <!-- All blog posts will be dynamically loaded here -->
+      </div>
+      <button class="btn back-to-main">Back to Main</button>
+    </section>
   </div>
   <footer>
     <nav>
@@ -373,6 +405,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#clients">Clients</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#blog">Blog</a></li>
         </ul>
       </div>
     </nav>

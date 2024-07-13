@@ -1,5 +1,4 @@
 /* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
@@ -20,14 +19,12 @@ p {
 }
 
 /* TRANSITION */
-
 a,
 .btn {
   transition: all 300ms ease;
 }
 
 /* DESKTOP NAV */
-
 nav,
 .nav-links {
   display: flex;
@@ -67,7 +64,6 @@ a:hover {
 }
 
 /* HAMBURGER MENU */
-
 #hamburger-nav {
   display: none;
 }
@@ -152,7 +148,6 @@ a:hover {
 }
 
 /* BLUR EFFECT */
-
 .blur-content {
   transition: filter 0.3s ease-in-out;
   filter: blur(0);
@@ -163,7 +158,6 @@ a:hover {
 }
 
 /* SECTIONS */
-
 section {
   padding-top: 4vh;
   margin: 0 10rem;
@@ -172,15 +166,16 @@ section {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease-in-out;
+  visibility: hidden; /* Initially hidden */
 }
 
 section.visible {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 /* PROFILE SECTION */
-
 #profile {
   display: flex;
   justify-content: center;
@@ -228,14 +223,12 @@ section.visible {
 }
 
 /* ICONS */
-
 .icon {
   cursor: pointer;
   height: 2rem;
 }
 
 /* BUTTONS */
-
 .btn-container {
   display: flex;
   justify-content: center;
@@ -281,8 +274,6 @@ section.visible {
 .btn-container {
   gap: 1rem;
 }
-
-/* ABOUT SECTION */
 
 /* ABOUT SECTION */
 #about {
@@ -342,7 +333,6 @@ section.visible {
 }
 
 /* EXPERIENCE SECTION */
-
 .experience-details-container {
   display: flex;
   flex-wrap: wrap;
@@ -391,7 +381,6 @@ article p {
 }
 
 /* CLIENTS SECTION */
-
 #clients {
   position: relative;
 }
@@ -435,7 +424,6 @@ article p {
 }
 
 /* CONTACT */
-
 #contact {
   display: flex;
   justify-content: center;
@@ -475,7 +463,6 @@ article p {
 }
 
 /* FOOTER SECTION */
-
 footer {
   height: 26vh;
   margin: 0 1rem;
@@ -486,7 +473,6 @@ footer p {
 }
 
 /* MEDIA QUERIES FOR MOBILE */
-
 @media screen and (max-width: 768px) {
   #desktop-nav {
     display: none;
@@ -517,3 +503,242 @@ footer p {
     width: 100%;
   }
 }
+
+/* BLOG SECTION */
+#blog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.blog-post {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  cursor: pointer;
+}
+
+.blog-post h2 {
+  margin-bottom: 1rem;
+}
+
+.blog-post p {
+  color: rgb(85, 85, 85);
+}
+
+/* BLOG POST CONTENT SECTION */
+#blog-post-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 5;
+  overflow-y: auto;
+  display: none;
+}
+
+.post-content-container {
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+#blog-post-content.visible .post-content-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-blog {
+  display: block;
+  margin-bottom: 1rem;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* FULL BLOG LIST SECTION */
+#full-blog-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 5;
+  overflow-y: auto;
+  display: none;
+}
+
+#full-blog-list .blog-container {
+  padding: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+#full-blog-list.visible .blog-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-main {
+  display: block;
+  margin: 2rem auto;
+  width: 10rem;
+  padding: 1rem;
+  background: rgb(53, 53, 53);
+  color: white;
+  text-align: center;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+/* Centering the "View More" button */
+#blog .btn {
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Ensure proper fitting and centering of the full blog list */
+#full-blog-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center; /* Center align text */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+#full-blog-list.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#full-blog-list .blog-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center; /* Center the blog posts within the container */
+}
+
+#full-blog-list .blog-post {
+  width: 100%;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: left; /* Ensure text inside blog posts is left-aligned */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+#full-blog-list .blog-post.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Center the individual blog post content */
+#blog-post-content .post-content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left; /* Ensure text inside blog posts is left-aligned */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+#blog-post-content.visible .post-content-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add some margin to the back to main button */
+.back-to-main {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* HIDE SECTIONS DURING TRANSITION */
+section.hidden {
+  display: none;
+}
+
+/* Fix for centering issue after interaction */
+#blog .blog-container,
+#full-blog-list .blog-container {
+  margin: 0 auto; /* Center align the container */
+  text-align: center; /* Center align the text */
+}
+
+/* Ensure the image container is centered */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0; /* Adjust as needed */
+}
+
+/* Maintain aspect ratio for images */
+.aspect-ratio-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+  overflow: hidden;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+.aspect-ratio-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/* Add spacing between paragraphs, headers, and other elements */
+#post-content p {
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+#post-content h3 {
+  margin-top: 1.5rem; /* Adjust as needed */
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+#post-content img {
+  margin-bottom: 1.5rem; /* Adjust as needed */
+}
+
+#post-content .image-container {
+  margin: 2rem 0; /* Adjust as needed */
+}
+
